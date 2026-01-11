@@ -1,0 +1,33 @@
+@use "modern-normalize/modern-normalize.css";
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100dvw;
+  height: 100dvh;
+  font-size: 62.5%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: $color-text;
+  background-color: $color-background;
+}
+
+#root {
+  width: 100dvw;
+  height: 100dvh;
+}
