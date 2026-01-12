@@ -1,0 +1,87 @@
+@use "../../../styles/variables" as *;
+
+.my-ai-node {
+  width: 24rem;
+  padding: $spacing-4;
+
+  border-radius: $radius-md;
+  background-color: $color-background;
+
+  box-shadow: 0 0 $spacing-4 0 rgba(0, 0, 0, 0.2);
+
+  .my-ai-node__header {
+    width: 100%;
+    padding: $spacing-4 0rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // border: 1px solid red;
+
+    .my-ai-node__header__title {
+      font-size: $font-size-xl;
+      font-weight: 600;
+      color: $color-text;
+    }
+  }
+
+  .my-ai-node__info {
+    width: 100%;
+    padding: $spacing-2 0rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+
+    // border: 1px solid red;
+
+    .my-ai-node__info__title {
+      font-size: $font-size-lg;
+      font-weight: 500;
+      color: $color-text;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .my-ai-node__info__description {
+      font-size: $font-size-base;
+      color: $color-text-muted;
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+    }
+
+    .my-ai-node__info__type {
+      display: flex;
+      align-items: center;
+      gap: $spacing-1;
+      min-width: 0;
+
+      font-size: $font-size-base;
+      color: $color-text-muted;
+
+      svg {
+        flex-shrink: 0;
+        width: 1.4rem;
+        height: 1.4rem;
+
+        rotate: 20deg;
+      }
+
+      .my-ai-node__info__type_text {
+        flex: 1;
+        min-width: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

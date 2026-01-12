@@ -10,6 +10,8 @@ import {
   type Node,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
+import { MyAINode } from "../../components";
+import { FlowNodeTypes } from "../../types";
 
 interface FlowProps {
   initialNodes: Node[];
@@ -23,9 +25,9 @@ const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
   const onConnect = (connection: Connection) =>
     setEdges((prevEdges) => addEdge(connection, prevEdges));
 
-  // My AI Node
-  // Request Node
-  //
+  const nodeTypes = {
+    [FlowNodeTypes.MY_AI_NODE]: MyAINode,
+  };
 
   return (
     <ReactFlow
@@ -33,6 +35,7 @@ const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
       edges={edges}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
+      nodeTypes={nodeTypes}
       onConnect={onConnect}
     >
       <Background />
