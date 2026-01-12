@@ -1,5 +1,6 @@
 export { default as ActivityIcon } from "./ActivityIcon/ActivityIcon";
 export { default as AttachFileIcon } from "./AttachFileIcon/AttachFileIcon";
+export { default as CloseIcon } from "./CloseIcon/CloseIcon";
 export { default as DecisionIcon } from "./DecisionIcon/DecisionIcon";
 export { default as EditIcon } from "./EditIcon/EditIcon";
 export { default as PlusIcon } from "./PlusIcon/PlusIcon";
