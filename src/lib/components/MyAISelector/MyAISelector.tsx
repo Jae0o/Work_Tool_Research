@@ -2,6 +2,7 @@ import { useId, useRef } from "react";
 import { useReactFlow } from "@xyflow/react";
 import { mockMyAIList } from "../../mocks/myAIData";
 import { FlowNodeTypes, type MyAI, type MyAINodeData } from "../../types";
+import { useClickAway } from "../../hooks";
 import "./MyAISelector.scss";
 
 interface MyAISelectorProps {
@@ -9,6 +10,8 @@ interface MyAISelectorProps {
 }
 
 const MyAISelector = ({ onClose }: MyAISelectorProps) => {
+  const clickAwayRef = useClickAway<HTMLDivElement>(onClose);
+
   const { addNodes, getNodes, getViewport } = useReactFlow();
   const idPrefix = useId();
   const counterRef = useRef(0);
@@ -36,7 +39,10 @@ const MyAISelector = ({ onClose }: MyAISelectorProps) => {
   };
 
   return (
-    <div className="my-ai-selector">
+    <div
+      ref={clickAwayRef}
+      className="my-ai-selector"
+    >
       <div className="my-ai-selector__header">
         <h3 className="my-ai-selector__title">My AI 선택</h3>
       </div>

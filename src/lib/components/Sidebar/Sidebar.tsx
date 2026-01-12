@@ -8,7 +8,7 @@ import { useToggle } from "../../hooks";
 import { useAddDecisionNode } from "./hooks";
 
 const Sidebar = () => {
-  const { isToggle, toggle, close } = useToggle({ initialState: true });
+  const { isToggle, toggle, close } = useToggle();
 
   const { handleAddDecisionNode } = useAddDecisionNode();
 
