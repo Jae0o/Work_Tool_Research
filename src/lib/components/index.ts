@@ -3,3 +3,6 @@ export { default as Button } from "./Button/Button";
 
 export { default as MyAINode } from "./MyAINode/MyAINode";
 export { default as RequestNode } from "./RequestNode/RequestNode";
+
+export { default as Sidebar } from "./Sidebar/Sidebar";
+export { default as MyAISelector } from "./MyAISelector/MyAISelector";

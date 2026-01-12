@@ -3,6 +3,7 @@ import {
   Background,
   Controls,
   ReactFlow,
+  ReactFlowProvider,
   useEdgesState,
   useNodesState,
   type Connection,
@@ -11,7 +12,7 @@ import {
   type NodeTypes,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { MyAINode, RequestNode } from "../../components";
+import { MyAINode, RequestNode, Sidebar } from "../../components";
 import { FlowNodeTypes } from "../../types";
 
 interface FlowProps {
@@ -19,7 +20,7 @@ interface FlowProps {
   initialEdges: Edge[];
 }
 
-const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
+const FlowInner = ({ initialNodes, initialEdges }: FlowProps) => {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
@@ -47,7 +48,16 @@ const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
     >
       <Background />
       <Controls />
+      <Sidebar />
     </ReactFlow>
+  );
+};
+
+const Flow = (props: FlowProps) => {
+  return (
+    <ReactFlowProvider>
+      <FlowInner {...props} />
+    </ReactFlowProvider>
   );
 };
 
