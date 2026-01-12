@@ -8,19 +8,19 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
-  &__header {
+  .my-ai-selector__header {
     padding: 1.6rem;
     border-bottom: 1px solid #e5e5e5;
   }
 
-  &__title {
+  .my-ai-selector__title {
     margin: 0;
     font-size: 1.6rem;
     font-weight: 600;
     color: #1a1a1a;
   }
 
-  &__list {
+  .my-ai-selector__list {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -29,8 +29,8 @@
     overflow-y: auto;
   }
 
-  &__item {
-    &-button {
+  .my-ai-selector__item {
+    .my-ai-selector__item-button {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -48,7 +48,7 @@
       }
     }
 
-    &-info {
+    .my-ai-selector__item-info {
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
@@ -56,7 +56,7 @@
       flex: 1;
     }
 
-    &-name {
+    .my-ai-selector__item-name {
       margin: 0;
       font-size: 1.4rem;
       font-weight: 500;
@@ -66,7 +66,7 @@
       text-overflow: ellipsis;
     }
 
-    &-description {
+    .my-ai-selector__item-description {
       margin: 0;
       font-size: 1.2rem;
       color: #666666;
@@ -75,7 +75,7 @@
       text-overflow: ellipsis;
     }
 
-    &-type {
+    .my-ai-selector__item-type {
       flex-shrink: 0;
       padding: 0.4rem 0.8rem;
       font-size: 1rem;

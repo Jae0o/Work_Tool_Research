@@ -1,7 +1,7 @@
 @use "../../../styles/variables" as *;
 
 .modal {
-  &__backdrop {
+  .modal__backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
     z-index: 1000;
   }
 
-  &__content {
+  .modal__content {
     position: relative;
     min-width: 4rem;
     min-height: 4rem;
@@ -29,7 +29,7 @@
     }
   }
 
-  &__close-button {
+  .modal__close-button {
     position: absolute;
     top: $spacing-2;
     right: $spacing-2;
