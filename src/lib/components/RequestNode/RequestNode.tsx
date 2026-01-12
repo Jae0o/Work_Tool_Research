@@ -5,11 +5,12 @@ import "./RequestNode.scss";
 
 interface RequestNodeProps {
   data: RequestNodeData;
+  selected?: boolean;
 }
 
-const RequestNode = ({ data }: RequestNodeProps) => {
+const RequestNode = ({ data, selected }: RequestNodeProps) => {
   return (
-    <div className="request-node">
+    <div className={`request-node ${selected ? "request-node--selected" : ""}`}>
       <Handle
         type="source"
         position={Position.Right}

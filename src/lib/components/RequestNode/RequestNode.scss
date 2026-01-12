@@ -6,8 +6,13 @@
 
   border-radius: $radius-md;
   background-color: $color-background;
+  border: 0.1rem solid transparent;
 
   box-shadow: 0 0 $spacing-4 0 rgba(0, 0, 0, 0.2);
+
+  &--selected {
+    border-color: $color-primary;
+  }
 
   .request-node__header {
     width: 100%;

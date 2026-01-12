@@ -7,13 +7,14 @@ import "./MyAINode.scss";
 
 interface MyAINodeProps {
   data: MyAINodeData;
+  selected?: boolean;
 }
 
-const MyAINode = ({ data }: MyAINodeProps) => {
+const MyAINode = ({ data, selected }: MyAINodeProps) => {
   const { myAI, isActive } = data;
 
   return (
-    <div className="my-ai-node">
+    <div className={`my-ai-node ${selected ? "my-ai-node--selected" : ""}`}>
       <Handle
         type="target"
         position={Position.Left}
