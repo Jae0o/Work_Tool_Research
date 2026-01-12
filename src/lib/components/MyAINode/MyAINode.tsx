@@ -1,8 +1,9 @@
 import { useState } from "react";
 import ToggleButton from "../ToggleButton/ToggleButton";
+import Button from "../Button/Button";
 import "./MyAINode.scss";
 import { Handle, Position } from "@xyflow/react";
-import { AttachFileIcon } from "../Icons";
+import { AttachFileIcon, EditIcon, SubmitIcon } from "../Icons";
 
 const MyAINode = () => {
   const [isActive, setIsActive] = useState(true);
@@ -12,7 +13,13 @@ const MyAINode = () => {
       <Handle
         type="target"
         position={Position.Left}
-        id="a"
+        className="my-ai-node__handle"
+      />
+
+      <Handle
+        type="source"
+        position={Position.Right}
+        className="my-ai-node__handle"
       />
 
       {/* Header */}
@@ -25,6 +32,7 @@ const MyAINode = () => {
         />
       </div>
 
+      {/* Info */}
       <div className="my-ai-node__info">
         <p className="my-ai-node__info__title">
           title title title title title title title title title title title
@@ -42,6 +50,20 @@ const MyAINode = () => {
           </p>
         </span>
       </div>
+
+      <div className="my-ai-node__actions">
+        <Button className="my-ai-node__actions__button">
+          <SubmitIcon size="2rem" />
+          <p>채팅 바로가기</p>
+        </Button>
+
+        <Button className="my-ai-node__actions__button edit-button">
+          <EditIcon size="2rem" />
+          <p>My AI 수정</p>
+        </Button>
+      </div>
+
+      <div className="my-ai-node__footer"></div>
     </div>
   );
 };
