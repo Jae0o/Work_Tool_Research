@@ -1,20 +1,16 @@
-import { useState } from "react";
 import { Panel } from "@xyflow/react";
 import Button from "../Button/Button";
-import { PlusIcon } from "../Icons";
+import { DecisionIcon, PlusIcon } from "../Icons";
 import MyAISelector from "../MyAISelector/MyAISelector";
+
 import "./Sidebar.scss";
+import { useToggle } from "../../hooks";
+import { useAddDecisionNode } from "./hooks";
 
 const Sidebar = () => {
-  const [isSelectorOpen, setIsSelectorOpen] = useState(false);
+  const { isToggle, toggle, close } = useToggle({ initialState: true });
 
-  const handleToggleSelector = () => {
-    setIsSelectorOpen((prev) => !prev);
-  };
-
-  const handleCloseSelector = () => {
-    setIsSelectorOpen(false);
-  };
+  const { handleAddDecisionNode } = useAddDecisionNode();
 
   return (
     <Panel
@@ -24,14 +20,22 @@ const Sidebar = () => {
       <div className="sidebar">
         <Button
           className="sidebar__button"
-          onClick={handleToggleSelector}
+          onClick={toggle}
           aria-label="My AI 추가"
         >
           <PlusIcon size="2rem" />
         </Button>
+
+        <Button
+          className="sidebar__button"
+          onClick={handleAddDecisionNode}
+          aria-label="Decision 추가"
+        >
+          <DecisionIcon size="2rem" />
+        </Button>
       </div>
 
-      {isSelectorOpen && <MyAISelector onClose={handleCloseSelector} />}
+      {isToggle && <MyAISelector onClose={close} />}
     </Panel>
   );
 };

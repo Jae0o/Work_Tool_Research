@@ -12,7 +12,7 @@ import {
   type NodeTypes,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { MyAINode, RequestNode, Sidebar } from "../../components";
+import { DecisionNode, MyAINode, RequestNode, Sidebar } from "../../components";
 import { FlowNodeTypes } from "../../types";
 
 interface FlowProps {
@@ -34,6 +34,7 @@ const FlowInner = ({ initialNodes, initialEdges }: FlowProps) => {
   const nodeTypes: NodeTypes = {
     [FlowNodeTypes.MY_AI_NODE]: MyAINode,
     [FlowNodeTypes.REQUEST_NODE]: RequestNode,
+    [FlowNodeTypes.DECISION_NODE]: DecisionNode,
   };
 
   return (

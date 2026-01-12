@@ -9,6 +9,11 @@ export type {
   GptVersion,
 } from "./MyAI/MyAI";
 
-export type { RequestNodeData, MyAINodeData, NodeData } from "./NodeData/NodeData";
+export type {
+  RequestNodeData,
+  MyAINodeData,
+  DecisionNodeData,
+  NodeData,
+} from "./NodeData/NodeData";
 
-export type { RequestNode, MyAINode, AppNode } from "./AppNode/AppNode";
+export type { RequestNode, MyAINode, DecisionNode, AppNode } from "./AppNode/AppNode";
