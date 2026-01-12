@@ -44,18 +44,26 @@ const MyAINode = ({ data }: MyAINodeProps) => {
         </span>
       </div>
 
+      {/* My Ai Actions */}
       <div className="my-ai-node__actions">
-        <Button className="my-ai-node__actions__button">
+        <Button
+          className="my-ai-node__actions__button"
+          whileHover={{ scale: 0.98 }}
+        >
           <SubmitIcon size="2rem" />
           <p>채팅 바로가기</p>
         </Button>
 
-        <Button className="my-ai-node__actions__button edit-button">
+        <Button
+          className="my-ai-node__actions__button edit-button"
+          whileHover={{ scale: 0.98 }}
+        >
           <EditIcon size="2rem" />
           <p>My AI 수정</p>
         </Button>
       </div>
 
+      {/* Footer */}
       <div className="my-ai-node__footer">
         <Button className="my-ai-node__footer__button">결과 확인</Button>
       </div>

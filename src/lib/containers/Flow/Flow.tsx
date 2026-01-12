@@ -26,6 +26,10 @@ const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
   const onConnect = (connection: Connection) =>
     setEdges((prevEdges) => addEdge(connection, prevEdges));
 
+  const onEdgeClick = (_event: React.MouseEvent, edge: Edge) => {
+    setEdges((edges) => edges.filter((e) => e.id !== edge.id));
+  };
+
   const nodeTypes: NodeTypes = {
     [FlowNodeTypes.MY_AI_NODE]: MyAINode,
     [FlowNodeTypes.REQUEST_NODE]: RequestNode,
@@ -39,6 +43,7 @@ const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
       onEdgesChange={onEdgesChange}
       nodeTypes={nodeTypes}
       onConnect={onConnect}
+      onEdgeClick={onEdgeClick}
     >
       <Background />
       <Controls />
