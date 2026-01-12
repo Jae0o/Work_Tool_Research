@@ -13,13 +13,11 @@ const MyAINode = () => {
       <Handle
         type="target"
         position={Position.Left}
-        className="my-ai-node__handle"
       />
 
       <Handle
         type="source"
         position={Position.Right}
-        className="my-ai-node__handle"
       />
 
       {/* Header */}

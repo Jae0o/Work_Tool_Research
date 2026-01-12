@@ -1,0 +1,40 @@
+@use "variables" as *;
+
+// Edge 기본 스타일
+.react-flow__edge-path {
+  stroke: $color-primary;
+  stroke-width: 2px;
+}
+
+// 선택된 Edge
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: $color-primary;
+  stroke-width: 3px;
+}
+
+// 호버 시
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: $color-primary;
+  stroke-width: 3px;
+}
+
+// 애니메이션 Edge (점선 흐르는 효과)
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: edge-dash 0.5s linear infinite;
+}
+
+@keyframes edge-dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+// Handle 기본 스타일
+.react-flow__handle {
+  width: 1rem;
+  height: 1rem;
+
+  background-color: $color-primary;
+  border: 0.2rem solid $color-background;
+}

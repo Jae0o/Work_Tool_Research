@@ -40,3 +40,16 @@ Base font size is 62.5% (1rem = 10px). Use variables via `@use "variables" as *;
 Uses project references pattern with separate configs:
 - `tsconfig.app.json` - App source code (ES2022, strict)
 - `tsconfig.node.json` - Node/Vite config files
+
+Note: `erasableSyntaxOnly: true` - enum 사용 불가, `as const` 객체 패턴 사용
+
+## Components
+
+주요 재사용 컴포넌트 (`src/lib/components/`):
+- `Button` - Ripple 효과 + framer-motion 애니메이션, className으로 스타일 주입
+- `ToggleButton` - 크기 조절 가능한 토글 스위치
+- `Icons` - SVG 아이콘 컴포넌트 (AttachFileIcon, EditIcon, SubmitIcon)
+
+## Documentation
+
+- `docs/REACT_FLOW_HANDLE.md` - React Flow Handle 사용 가이드
