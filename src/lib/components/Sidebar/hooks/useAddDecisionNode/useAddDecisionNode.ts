@@ -21,6 +21,7 @@ const useAddDecisionNode = () => {
       },
       data: {
         isActive: true,
+        branches: [],
       } satisfies DecisionNodeData,
     };
 

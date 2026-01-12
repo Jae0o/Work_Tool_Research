@@ -12,6 +12,7 @@ export type {
 export type {
   RequestNodeData,
   MyAINodeData,
+  DecisionBranch,
   DecisionNodeData,
   NodeData,
 } from "./NodeData/NodeData";

@@ -1,0 +1,1 @@
+export { getHandlePosition } from "./getHandlePosition";

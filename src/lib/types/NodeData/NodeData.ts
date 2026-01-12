@@ -12,9 +12,16 @@ export interface MyAINodeData extends Record<string, unknown> {
   isActive: boolean;
 }
 
+// DecisionBranch 타입
+export interface DecisionBranch {
+  id: string;
+  condition: string;
+}
+
 // DecisionNode 데이터 타입
 export interface DecisionNodeData extends Record<string, unknown> {
   isActive: boolean;
+  branches: DecisionBranch[];
 }
 
 // 모든 노드 데이터 유니온 타입
