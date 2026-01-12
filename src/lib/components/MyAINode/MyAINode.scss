@@ -2,7 +2,7 @@
 
 .my-ai-node {
   width: 24rem;
-  padding: $spacing-4;
+  padding: $spacing-6;
 
   border-radius: $radius-md;
   background-color: $color-background;
@@ -121,6 +121,18 @@
 
     margin-top: $spacing-12;
 
-    border: 1px solid red;
+    .my-ai-node__footer__button {
+      padding: $spacing-3 $spacing-6;
+
+      font-size: $font-size-base;
+      font-weight: 600;
+      color: white;
+
+      background-color: $color-text-muted;
+      border-radius: $radius-sm;
+      box-shadow: 0 0 $spacing-2 0 rgba(0, 0, 0, 0.1);
+
+      cursor: pointer;
+    }
   }
 }

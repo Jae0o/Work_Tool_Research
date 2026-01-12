@@ -61,7 +61,9 @@ const MyAINode = () => {
         </Button>
       </div>
 
-      <div className="my-ai-node__footer"></div>
+      <div className="my-ai-node__footer">
+        <Button className="my-ai-node__footer__button">결과 확인</Button>
+      </div>
     </div>
   );
 };
