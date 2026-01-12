@@ -1,11 +1,15 @@
 import "./App.scss";
-import { Flow } from "./lib/components";
+import { Flow } from "./lib/containers";
+import { initialEdges, initialNodes } from "./lib/constants";
 
 const App = () => {
   return (
     <main className="app">
       <section className="app__section">
-        <Flow />
+        <Flow
+          initialNodes={initialNodes}
+          initialEdges={initialEdges}
+        />
       </section>
     </main>
   );
