@@ -10,7 +10,7 @@ import {
   type Node,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { MyAINode } from "../../components";
+import { MyAINode, RequestNode } from "../../components";
 import { FlowNodeTypes } from "../../types";
 
 interface FlowProps {
@@ -27,6 +27,7 @@ const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
 
   const nodeTypes = {
     [FlowNodeTypes.MY_AI_NODE]: MyAINode,
+    [FlowNodeTypes.REQUEST_NODE]: RequestNode,
   };
 
   return (
