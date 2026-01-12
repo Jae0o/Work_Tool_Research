@@ -8,6 +8,7 @@ import {
   type Connection,
   type Edge,
   type Node,
+  type NodeTypes,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { MyAINode, RequestNode } from "../../components";
@@ -25,7 +26,7 @@ const Flow = ({ initialNodes, initialEdges }: FlowProps) => {
   const onConnect = (connection: Connection) =>
     setEdges((prevEdges) => addEdge(connection, prevEdges));
 
-  const nodeTypes = {
+  const nodeTypes: NodeTypes = {
     [FlowNodeTypes.MY_AI_NODE]: MyAINode,
     [FlowNodeTypes.REQUEST_NODE]: RequestNode,
   };

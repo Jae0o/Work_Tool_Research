@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { Handle, Position } from "@xyflow/react";
+import type { MyAINodeData } from "../../types";
 import ToggleButton from "../ToggleButton/ToggleButton";
 import Button from "../Button/Button";
-import "./MyAINode.scss";
-import { Handle, Position } from "@xyflow/react";
 import { AttachFileIcon, EditIcon, SubmitIcon } from "../Icons";
+import "./MyAINode.scss";
 
-const MyAINode = () => {
-  const [isActive, setIsActive] = useState(true);
+interface MyAINodeProps {
+  data: MyAINodeData;
+}
+
+const MyAINode = ({ data }: MyAINodeProps) => {
+  const { myAI, isActive } = data;
 
   return (
     <div className="my-ai-node">
@@ -14,7 +18,6 @@ const MyAINode = () => {
         type="target"
         position={Position.Left}
       />
-
       <Handle
         type="source"
         position={Position.Right}
@@ -26,26 +29,18 @@ const MyAINode = () => {
 
         <ToggleButton
           checked={isActive}
-          onChange={setIsActive}
+          onChange={() => {}}
         />
       </div>
 
       {/* Info */}
       <div className="my-ai-node__info">
-        <p className="my-ai-node__info__title">
-          title title title title title title title title title title title
-        </p>
-        <p className="my-ai-node__info__description">
-          description description description description description description description
-          description description description description description description description
-        </p>
+        <p className="my-ai-node__info__title">{myAI.name}</p>
+        <p className="my-ai-node__info__description">{myAI.description}</p>
 
         <span className="my-ai-node__info__type">
           <AttachFileIcon size="1.4rem" />
-
-          <p className="my-ai-node__info__type_text">
-            AI Type My AI Type My AI Type AI Type My AI Type My AI Type
-          </p>
+          <p className="my-ai-node__info__type_text">{myAI.AIType ?? "N/A"}</p>
         </span>
       </div>
 

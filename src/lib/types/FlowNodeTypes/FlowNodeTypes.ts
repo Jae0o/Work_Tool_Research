@@ -5,4 +5,7 @@ const FlowNodeTypes = {
 
 type FlowNodeTypes = (typeof FlowNodeTypes)[keyof typeof FlowNodeTypes];
 
+export type MyAINodeType = (typeof FlowNodeTypes)["MY_AI_NODE"];
+export type RequestNodeType = (typeof FlowNodeTypes)["REQUEST_NODE"];
+
 export default FlowNodeTypes;
