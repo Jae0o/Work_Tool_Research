@@ -8,3 +8,4 @@ export { default as DecisionNode } from "./DecisionNode/DecisionNode";
 
 export { default as Sidebar } from "./Sidebar/Sidebar";
 export { default as MyAISelector } from "./MyAISelector/MyAISelector";
+export { default as LabeledEdge } from "./LabeledEdge/LabeledEdge";

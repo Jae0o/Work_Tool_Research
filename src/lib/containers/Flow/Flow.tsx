@@ -1,19 +1,19 @@
 import {
-  addEdge,
   Background,
   Controls,
   ReactFlow,
   ReactFlowProvider,
   useEdgesState,
   useNodesState,
-  type Connection,
   type Edge,
+  type EdgeTypes,
   type Node,
   type NodeTypes,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { DecisionNode, MyAINode, RequestNode, Sidebar } from "../../components";
+import { DecisionNode, LabeledEdge, MyAINode, RequestNode, Sidebar } from "../../components";
 import { FlowNodeTypes } from "../../types";
+import { useFlowConnection } from "./hooks";
 
 interface FlowProps {
   initialNodes: Node[];
@@ -26,12 +26,14 @@ const nodeTypes: NodeTypes = {
   [FlowNodeTypes.DECISION_NODE]: DecisionNode,
 };
 
+const edgeTypes: EdgeTypes = {
+  labeled: LabeledEdge,
+};
+
 const FlowInner = ({ initialNodes, initialEdges }: FlowProps) => {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-
-  const onConnect = (connection: Connection) =>
-    setEdges((prevEdges) => addEdge(connection, prevEdges));
+  const { onConnect } = useFlowConnection({ setEdges });
 
   const onEdgeClick = (_event: React.MouseEvent, edge: Edge) => {
     setEdges((edges) => edges.filter((e) => e.id !== edge.id));
@@ -44,6 +46,7 @@ const FlowInner = ({ initialNodes, initialEdges }: FlowProps) => {
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       nodeTypes={nodeTypes}
+      edgeTypes={edgeTypes}
       onConnect={onConnect}
       onEdgeClick={onEdgeClick}
     >

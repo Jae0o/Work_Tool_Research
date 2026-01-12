@@ -1,0 +1,22 @@
+@use "../../../styles/variables" as *;
+
+.labeled-edge__label {
+  position: absolute;
+  z-index: 1000;
+  padding: $spacing-1 $spacing-2;
+  background-color: $color-background;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  color: $color-text;
+  white-space: nowrap;
+  pointer-events: all;
+  max-width: 15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.labeled-edge__label--selected {
+  border-color: $color-primary;
+  background-color: rgba($color-primary, 0.1);
+}
