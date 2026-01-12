@@ -1,0 +1,49 @@
+@use "../../../styles/variables" as *;
+
+.toggle-button {
+  --toggle-size: 20px;
+  --toggle-padding: calc(var(--toggle-size) * 0.1);
+  --toggle-knob-size: calc(var(--toggle-size) - var(--toggle-padding) * 2);
+  --toggle-width: calc(var(--toggle-size) * 1.75);
+
+  width: var(--toggle-width);
+  height: var(--toggle-size);
+  padding: var(--toggle-padding);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background-color: $color-border;
+  border: none;
+  border-radius: $radius-full;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &[aria-checked="true"] {
+    background-color: $color-primary;
+
+    .toggle-button__knob {
+      transform: translateX(
+        calc(var(--toggle-width) - var(--toggle-knob-size) - var(--toggle-padding) * 2)
+      );
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .toggle-button__knob {
+    width: var(--toggle-knob-size);
+    height: var(--toggle-knob-size);
+
+    background-color: #ffffff;
+    border-radius: $radius-full;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s ease;
+  }
+}
