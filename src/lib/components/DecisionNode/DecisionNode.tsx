@@ -94,12 +94,14 @@ const DecisionNode = ({ id, data, selected }: DecisionNodeProps) => {
       )}
 
       {/* Modal */}
-      <DecisionAddModal
-        isShow={isShow}
-        onClose={handleCloseModal}
-        onSave={handleSaveBranch}
-        currentBranches={branches}
-      />
+      {isShow && (
+        <DecisionAddModal
+          isShow={isShow}
+          onClose={handleCloseModal}
+          onSave={handleSaveBranch}
+          currentBranches={branches}
+        />
+      )}
     </div>
   );
 };

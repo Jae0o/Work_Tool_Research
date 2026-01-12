@@ -1,52 +1,50 @@
 @use "../../../styles/variables" as *;
 
-.modal {
-  .modal__backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow: auto;
-    z-index: 1000;
-  }
+.modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  z-index: 1000;
+}
 
-  .modal__content {
-    position: relative;
-    min-width: 4rem;
-    min-height: 4rem;
-    padding: $spacing-4;
-    background-color: $color-background;
-    border-radius: $radius-md;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+.modal__content {
+  position: relative;
+  min-width: 4rem;
+  min-height: 4rem;
+  padding: $spacing-4;
+  background-color: $color-background;
+  border-radius: $radius-md;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
-    &--with-close {
-      padding-top: $spacing-8;
-    }
-  }
+.modal__content--with-close {
+  padding-top: $spacing-8;
+}
 
-  .modal__close-button {
-    position: absolute;
-    top: $spacing-2;
-    right: $spacing-2;
-    width: 2.4rem;
-    height: 2.4rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    color: $color-text-muted;
-    transition: opacity 0.2s ease;
+.modal__close-button {
+  position: absolute;
+  top: $spacing-2;
+  right: $spacing-2;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: $color-text-muted;
+  transition: opacity 0.2s ease;
+}
 
-    &:hover {
-      opacity: 0.5;
-    }
-  }
+.modal__close-button:hover {
+  opacity: 0.5;
 }

@@ -3,23 +3,17 @@ import { createPortal } from "react-dom";
 import type { ModalPortalProps } from "./ModalPortal.type";
 
 const ModalPortal = ({ isShow, children }: ModalPortalProps) => {
-  const [modalBaseElement, setModalBaseElement] = useState<HTMLElement | null>(
-    null
-  );
+  const [modalBaseElement] = useState<HTMLElement | null>(document.body);
 
   useEffect(() => {
-    setModalBaseElement(document.body);
+    if (!modalBaseElement || !isShow) return;
 
-    if (!modalBaseElement) return;
+    const originalStyle = window.getComputedStyle(modalBaseElement).overflow;
+    document.body.style.overflow = "hidden";
 
-    if (isShow) {
-      const originalStyle = window.getComputedStyle(modalBaseElement).overflow;
-      document.body.style.overflow = "hidden";
-
-      return () => {
-        document.body.style.overflow = originalStyle;
-      };
-    }
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
   }, [isShow, modalBaseElement]);
 
   if (!isShow || !modalBaseElement) {
