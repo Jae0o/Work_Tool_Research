@@ -3,7 +3,7 @@ import type { DecisionNodeData } from "../../types";
 import { DecisionIcon } from "../Icons";
 import ToggleButton from "../ToggleButton/ToggleButton";
 import Button from "../Button/Button";
-import { DecisionAddModal } from "../../containers";
+import DecisionAddModal from "../../containers/DecisionAddModal/DecisionAddModal";
 import { useModal } from "../../hooks";
 import { useDecisionBranches } from "./hooks";
 import { getHandlePosition } from "./utils";
